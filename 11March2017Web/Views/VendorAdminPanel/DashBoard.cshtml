@@ -1,0 +1,131 @@
+﻿@model _11March2017Web.Models.tblVendor
+
+@{
+    ViewBag.Title = "DashBoard";
+}
+
+<div class="panel container">
+    <h2>DashBoard</h2>
+
+    <div class="container">
+        <div class="col-md-12">
+            <a href="@Url.Action("AddProduct")">
+                <img src="~/Content/img/addProduct.png" alt="Get inspired" class="img-responsive pull-left" style="width:50px;height:50px;">
+            </a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="col-md-3">
+        @Html.Partial("_NavBarStacked")
+    </div>
+
+    <div class="col-md-9">
+        <div class="panel panel-default well well-sm">
+            <div class="panel-body">
+
+                <div class="col-md-12">
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorName)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.vendorName)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorEmail)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.vendorEmail)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-sm-10">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorAddress)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.vendorAddress)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorPhone)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.vendorPhone)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorCNIC)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.vendorCNIC)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorType)
+
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.tblBusinessType.businessTypeName)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <dl class="dl-horizontal">
+                            <dt class="h3">
+                                @Html.DisplayNameFor(model => model.vendorGender)
+                            </dt>
+
+                            <dd class="h4">
+                                @Html.DisplayFor(model => model.tblGender.genderName)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                
+
+
+
+
+
+

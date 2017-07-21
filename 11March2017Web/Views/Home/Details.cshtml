@@ -1,0 +1,90 @@
+﻿@model _11March2017Web.Models.tblVendor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblVendor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorCNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorCNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblBusinessType.businessTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblBusinessType.businessTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblGender.genderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblGender.genderName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.vendorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

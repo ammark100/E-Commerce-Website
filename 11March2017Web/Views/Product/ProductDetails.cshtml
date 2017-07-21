@@ -1,0 +1,103 @@
+﻿@model _11March2017Web.Models.tblProduct
+
+@{
+    
+    List<_11March2017Web.Models.tblImage> images = Model.tblImages.ToList();
+    ViewBag.Title = "ProductDetails";
+}
+
+
+<div class="panel container">
+    <h2>Product Details</h2>
+    <div class="col-md-6">
+        @if (Model.tblImages.Count != 0)
+        {
+
+            var pic = images.First();
+            var bas = Convert.ToBase64String(pic.ImageFile);
+            var imagesrc = string.Format("data:image/gif;base64,{0}", bas);
+
+            <img id="mainImg" src='@imagesrc' style="height:450px;width:540px;" />
+
+            <div id="myDiv" onclick="changeImage(event)">
+                @foreach (var item in images)
+                {
+                    var base64 = Convert.ToBase64String(item.ImageFile);
+                    var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                    <img src='@imgsrc' style="height:100px;width:100px;" />
+                }
+            </div>
+        }
+        else
+        {
+            <img id="mainImg" src="~/Content/img/noImage.jpg" style="height:450px;width:540px;" />
+        }
+    </div>
+
+    <div class="col-md-6">
+        <h2>@Model.productName</h2>
+        <br/>
+        <br/>
+        <p>@Model.productDescription</p>
+
+        
+        <h3>Rs.  @Model.productPrice</h3>
+        
+
+        <br/>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.productID)
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.productThumbnailPath)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.productQuantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.productQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.productQuantity, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-8 col-md-10">
+                            <input type="submit" value="Add to Cart" class="btn btn-info btn-lg" />
+                        </div>
+                    </div>
+                </div>
+            }
+            
+            <br />
+
+        </div>
+</div>
+
+<script type="text/javascript">
+
+    var images = document.getElementById("myDiv").getElementsByTagName("img");
+    for (var i = 0; i < images.length; i++) {
+        images[i].onmouseover = function () {
+            this.style.cursor = 'hand';
+            this.style.borderColor = 'red'
+        }
+        images[i].onmouseout = function () {
+            this.style.cursor = 'pointer';
+            this.style.borderColor = 'grey'
+        }
+    }
+
+    function changeImage(event) {
+        event = event || window.event;
+
+        var targetElement = event.target || event.srcElement;
+        if (targetElement.tagName == "IMG") {
+            document.getElementById("mainImg").src = targetElement.getAttribute("src");
+        }
+            }
+</script>

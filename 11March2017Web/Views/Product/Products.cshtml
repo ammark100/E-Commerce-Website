@@ -1,0 +1,84 @@
+﻿@model IEnumerable<_11March2017Web.Models.tblProduct>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+
+
+<div class="container panel">
+    <h2>Products</h2>
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">All</a></li>
+            <li role="presentation"><a href="#">Fast Food</a></li>
+            <li role="presentation"><a href="#">Dairy</a></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="row products">
+            @foreach (var item in Model)
+            {
+                if (item.productThumbnailPath != null)
+                {
+                    //  var bas = Convert.ToBase64String(item.productThumbnail);
+                    //  var imagesrc = string.Format("data:image/gif;base64,{0}", bas);
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="@Url.Action("ProductDetails",item)">
+                                                <img src="@Url.Content(item.productThumbnailPath)" alt="" class="img-responsive" style="width:450px;height:300px;">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="@Url.Action("ProductDetails",item)">@item.productName</a></h3>
+                                    <p class="price">@item.productPrice</p>
+                                    <p class="buttons">
+                                        <a href="@Url.Action("ProductDetails",item)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Edit</a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="@Url.Action("ProductDetails",item)">
+                                                <img src="~/Content/img/noImage.jpg" alt="" class="img-responsive" style="width:450px;height:300px;">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="@Url.Action("ProductDetails",item)">@item.productName</a></h3>
+                                    <p class="price">@item.productPrice</p>
+                                    <p class="buttons">
+                                        <a href="@Url.Action("ProductDetails",item)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Edit</a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        </div>
+    </div>

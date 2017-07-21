@@ -1,0 +1,126 @@
+﻿@model _11March2017Web.Models.tblProduct
+
+@{
+    //   _11March2017Web.Models.tblProduct products = Model.product;
+    //    List<_11March2017Web.Models.tblImage> images = Model.images;
+    List<_11March2017Web.Models.tblImage> images = Model.tblImages.ToList();
+    ViewBag.Title = "ProductDetails";
+}
+
+<div class="panel container">
+    <h2>Product Details</h2>
+    <div class="col-md-6">
+        @if (Model.tblImages.Count != 0)
+        {
+        
+            var pic = images.First();
+            var bas = Convert.ToBase64String(pic.ImageFile);
+            var imagesrc = string.Format("data:image/gif;base64,{0}", bas);
+        
+        <img id="mainImg" src='@imagesrc' style="height:450px;width:540px;" />
+
+        <div id="myDiv" onclick="changeImage(event)">
+            @foreach (var item in images)
+            {
+                var base64 = Convert.ToBase64String(item.ImageFile);
+                var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                <img src='@imgsrc' style="height:100px;width:100px;" />
+            }
+        </div>
+        }
+        else
+        {
+            <img id="mainImg" src="~/Content/img/noImage.jpg" style="height:450px;width:540px;" />
+        }
+    </div>
+
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.productID)
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.productThumbnailPath)
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.productName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.productName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.productName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.productDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.productDescription, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.productDescription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.productPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.productPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.productPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.productQuantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.productQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.productQuantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+              <!--  @Html.Label("Category",htmlAttributes: new { @class = "control-label col-md-2" })  -->
+                    @Html.LabelFor(model => model.productCategory, "productCategory", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("productCategory", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.productCategory, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var images = document.getElementById("myDiv").getElementsByTagName("img");
+    for (var i = 0; i < images.length; i++) {
+        images[i].onmouseover = function () {
+            this.style.cursor = 'hand';
+            this.style.borderColor = 'red'
+        }
+        images[i].onmouseout = function () {
+            this.style.cursor = 'pointer';
+            this.style.borderColor = 'grey'
+        }
+    }
+
+    function changeImage(event) {
+        event = event || window.event;
+
+        var targetElement = event.target || event.srcElement;
+        if (targetElement.tagName == "IMG") {
+            document.getElementById("mainImg").src = targetElement.getAttribute("src");
+        }
+            }
+</script>
+

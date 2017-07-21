@@ -1,0 +1,89 @@
+﻿@model IEnumerable<_11March2017Web.Models.tblOrder>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div class="panel container">
+    <h2>My Orders</h2>
+
+    <div class="col-md-3">
+        @Html.Partial("_NavBarStacked")
+    </div>
+
+    <div class="col-md-9">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Order ID#")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Placed Time")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Status")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Delivery Address")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Total Price")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Order Ratings")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Customer Name")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Customer Phone#")
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orderID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orderPlacedTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tblOrderStatu.statusName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orderDelieveryAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.totalOrderPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orderRating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tblCustomer.customerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tblCustomer.customerPhone)
+                    </td>
+
+                    <td>
+                        <p><a href="@Url.Action("OrderDetail",item)">Details</a></p>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</div>

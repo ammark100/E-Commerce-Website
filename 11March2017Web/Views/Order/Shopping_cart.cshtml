@@ -1,0 +1,62 @@
+﻿@model IEnumerable<_11March2017Web.Models.Cart>
+
+@{
+    ViewBag.Title = "Shopping cart";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <br/><br />
+        <h2>Shopping Cart</h2>
+
+        <br />
+        <table class="table">
+            <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src='@Url.Content(item.productThumbnailPath)' style="height:50px;width:50px;" /></td>
+                    <td>@item.productName</td>
+                    <td>@item.productUnitPrice</td>
+                    <td>@item.productQty</td>
+                    <td>@item.productTotalPrice</td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+            <h3>Total</h3>
+            <h4>RS. @ViewBag.Total_amount /-</h4>
+        </div>
+    </div>
+
+    <br/><br />
+    <div class="col-md-12">
+        <div class="col-sm-6">
+            
+        </div>
+        <div class="col-sm-3">
+            <a href="@Url.Action("Products","Product")" class="btn-primary">Continue Shopping</a>
+        </div>
+        <div class="col-sm-3">
+            <a href="@Url.Action("Checkout","Order")" class="btn-danger">CheckOut</a>
+        </div>
+    </div>
+   
+</div>

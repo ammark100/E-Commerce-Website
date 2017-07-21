@@ -1,0 +1,76 @@
+﻿@model _11March2017Web.Models.OrderDetailView
+
+@{
+    ViewBag.Title = "OrderDetail";
+    List<_11March2017Web.Models.Cart> cart_list = Model.cart_List.ToList();
+}
+
+<div class="container">
+    <h2>Order Detail</h2>
+    <div class="col-md-3">
+        @Html.Partial("_NavBarStacked")
+    </div>
+    <div class="col-md-9">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Product ID#")
+                </th>
+                <th>
+                    @Html.DisplayName("Product Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Unit Price")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantity")
+                </th>
+                <th>
+                    @Html.DisplayName("Total Price")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in cart_list)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productUnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productQty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productTotalPrice)
+                    </td>
+                    <td><img src='@Url.Content(item.productThumbnailPath)' style="height:50px;width:50px;" /></td>
+                </tr>
+            }
+        </table>
+        <br /><br />
+        <table class="table">
+            <tr>
+                <th>
+                    Total Price
+                </th>
+            </tr>
+            <tr>
+                <th class="pull-right">
+                    RS. @Model.totalPrice /-
+                </th>
+            </tr>
+        </table>
+
+        <h3>Placed Time</h3>
+        <h4>@Model.datetime</h4>
+        <br />
+        <h3>Order Status</h3>
+        <h4>@Model.statusName</h4>
+    </div>
+</div>
