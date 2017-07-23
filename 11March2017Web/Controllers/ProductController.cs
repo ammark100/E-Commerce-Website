@@ -33,7 +33,7 @@ namespace _11March2017Web.Controllers
             tblProduct product = db.tblProducts.Where(temp => temp.productID == prod.productID).FirstOrDefault();
 
             List<Cart> cart_list = Session["my_cart"] != null ? (List<Cart>)Session["my_cart"] : new List<Cart>();
-
+            
             Cart temp_cart = new Cart();
 
             if (prod.productQuantity > product.productQuantity)
