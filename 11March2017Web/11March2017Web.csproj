@@ -133,9 +133,11 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\demo.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\fonts\flexslider-icon.svg" />
     <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\css\footer-basic-centered.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\owl.transitions.css" />
@@ -148,17 +150,22 @@
     <Content Include="Content\img\addProduct.png" />
     <Content Include="Content\img\Burger.jpg" />
     <Content Include="Content\img\burger_slider.jpg" />
+    <Content Include="Content\img\Cash-icon.png" />
+    <Content Include="Content\img\gold-medal.png" />
+    <Content Include="Content\img\lock-icon.png" />
     <Content Include="Content\img\main-slider1.jpg" />
     <Content Include="Content\img\main-slider2.jpg" />
     <Content Include="Content\img\main-slider3.jpg" />
     <Content Include="Content\img\main-slider4.jpg" />
-    <Content Include="Content\img\medium_rare_steak.jpg" />
     <Content Include="Content\img\noImage.jpg" />
     <Content Include="Content\img\steak.jpg" />
     <Content Include="Content\img\steak_and_burger.jpg" />
     <Content Include="Content\img\steak_and_corns.jpg" />
+    <Content Include="Content\img\steak_slider.jpg" />
+    <Content Include="Content\img\truck-icon.png" />
     <Content Include="Content\img\veggies.jpg" />
     <Content Include="Content\img\veggies1.jpg" />
+    <Content Include="Content\img\veggies_slider.jpg" />
     <Content Include="Content\js\bootstrap-hover-dropdown.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\front.js" />
@@ -318,7 +325,6 @@
     <Content Include="Views\VendorAdminPanel\MyProducts.cshtml" />
     <Content Include="Views\VendorAdminPanel\ProductDetails.cshtml" />
     <Content Include="Views\Home\Index1.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Products.cshtml" />
     <Content Include="Views\Product\ProductDetails.cshtml" />
     <Content Include="Views\Order\Shopping_cart.cshtml" />
@@ -331,6 +337,7 @@
     <Content Include="Views\Customer\OrderDetail.cshtml" />
     <Content Include="Views\VendorAdminPanel\Orders.cshtml" />
     <Content Include="Views\VendorAdminPanel\OrderDetail.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -51,12 +51,18 @@
         <div class="col-sm-6">
             
         </div>
-        <div class="col-sm-3">
-            <a href="@Url.Action("Products","Product")" class="btn-primary">Continue Shopping</a>
+        <div class="col-sm-2">
+            @Html.ActionLink("Continue Shopping", "Products", "Product", new { area = "" }, new { @class = "btn btn-primary" })
         </div>
-        <div class="col-sm-3">
-            <a href="@Url.Action("Checkout","Order")" class="btn-danger">CheckOut</a>
-        </div>
+        @if (Model.Count() != 0)
+        {
+            <div class="col-sm-2">
+                @Html.ActionLink("Clear Cart", "Clear_cart", "Order", new { area = "" }, new { @class = "btn btn-danger" })
+            </div>
+            <div class="col-sm-2">
+                @Html.ActionLink("CheckOut", "Checkout", "Order", new { area = "" }, new { @class = "btn btn-success" })
+            </div>
+        }
     </div>
    
 </div>

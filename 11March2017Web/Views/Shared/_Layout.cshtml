@@ -8,6 +8,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>     
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />  
+    <link href="~/Content/css/demo.css" rel="stylesheet" />
+    <link href="~/Content/css/footer-basic-centered.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <script src="~/Scripts/respond.min.js"></script>     
@@ -44,6 +46,7 @@
                 {
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            @Html.ActionLink("Cart", "Shopping_cart", "Order", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-shopping-cart" })
                             @Html.ActionLink("Logout", "Logout", "Customer", new { area = "" }, new { @class = "navbar-brand" })
                         </ul>
                     </div>
@@ -68,13 +71,60 @@
             @RenderBody()
             <hr />
         </div>
-        <footer class="panel">
-            <p>&copy; @DateTime.Now.Year - Submitted by Ammar</p>
+        <div class="panel panel-default col-md-12">
+            <div class="panel-heading col-sm-4">
+                <div class="col-md-12">
+                    <div class="col-sm-2">
+                        <img src="~/Content/img/truck-icon.png" width="50" ; height="50" />
+                    </div>
+                    <br />
+                    <div class="col-sm-10">
+                        <h3 class="panel-title">FAST AND FREE DELIVERY</h3>
+                    </div>
+                </div>  
+            </div>
+            <div class="panel-heading col-sm-4">
+                <div class="col-md-12">
+                    <div class="col-sm-2">
+                        <img src="~/Content/img/lock-icon.png" width="50" ; height="50" />
+                    </div>
+                    <br />
+                    <div class="col-sm-10">
+                        <h3 class="panel-title">SAFE AND SECURE PAYMENT</h3>
+                    </div>
+                </div> 
+            </div>
+            <div class="panel-heading col-sm-4">
+                <div class="col-md-12">
+                    <div class="col-sm-2">
+                        <img src="~/Content/img/Cash-icon.png" width="50" ; height="50" />
+                    </div>
+                    <br/>
+                    <div class="col-sm-10">
+                        <h3 class="panel-title">100% MONEY BACK GUARANTEED</h3>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <hr />
+        <footer class="footer-basic-centered">
+            <p class="footer-company-motto">We Value Your Time & Money</p>
+
+            <p class="footer-links">
+                <a href="@Url.Action("Index","Home")">Home</a>
+                ·
+                <a href="@Url.Action("Index","Home")">About</a>
+                ·
+                <a href="@Url.Action("Index","Home")">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Company Name &copy; @DateTime.Now.Year</p>
+            <p class="footer-company-name">Developed by Ammar</p>
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
+    <script src="~/Content/js/owl.carousel.min.js"></script>
 </body>
 </html>

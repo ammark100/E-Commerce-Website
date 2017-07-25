@@ -24,6 +24,12 @@ namespace _11March2017Web.Controllers
             return View(cart_list);
         }
 
+        public ActionResult Clear_cart()
+        {
+            Session.Remove("my_cart");
+            return RedirectToAction("Shopping_cart");
+        }
+
         public ActionResult Checkout()
         {
             if(Session["customerName"] == null && Session["customerID"] == null)

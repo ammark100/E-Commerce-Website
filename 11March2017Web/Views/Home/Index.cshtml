@@ -1,106 +1,199 @@
-﻿
+﻿@model IEnumerable<_11March2017Web.Models.tblProduct>
+
 @{
-    ViewBag.Title = "Index1";
+    ViewBag.Title = "Index";
 }
 
-<div>
-    <img src="~/Content/img/steak.jpg" width="1366" ; height="500" />
-</div>
-<br />
-<br />
-<div class="col-md-4">
-    <div class="container" style="width:900px;">
-        <div class="row products">
-            <div class="col-md-4 col-sm-6">
-                <div class="panel-default panel panel-body">
-                    <div class="product">
-                        <div class="flip-container">
-                            <div class="flipper">
-                                <div class="front">
-                                    <a href="#">
-                                        <p></p>
-                                    </a>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+
+<script src="~/Content/js/respond.min.js"></script>
+
+<script src="~/Content/js/modernizr-2.6.2.js"></script>
+<script src="~/Content/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/owl.carousel.min.js"></script>
+
+<div class="container">
+    <!-- <div>
+         <img src="~/Content/img/steak.jpg" />
+     </div> -->
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid img-responsive" src="~/Content/img/burger_slider.jpg" alt="First slide">
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="col-md-12">
+        <div class="col-sm-4">
+            <div class="container" style="width:900px;">
+                <div class="row products">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="#">
+                                                <p></p>
+                                            </a>
+                                        </div>
+
+                                    </div>
                                 </div>
+                                <div class="text">
+                                    <h3><a href="#">Quality Products</a></h3>
+                                    <p>We provide the Best Quality in town</p>
 
+
+                                </div>
+                                <!-- /.text -->
                             </div>
+                            <!-- /.product -->
                         </div>
-                        <div class="text">
-                            <h3><a href="#">Quality Products</a></h3>
-                            <p>We provide the Best Quality in town</p>
-
-
-                        </div>
-                        <!-- /.text -->
                     </div>
-                    <!-- /.product -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="container" style="width:900px;">
+                <div class="row products">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="#">
+                                                <p></p>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="#">Quality Products</a></h3>
+                                    <p>We provide the Best Quality in town</p>
+
+
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="container" style="width:900px;">
+                <div class="row products">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="#">
+                                                <p></p>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="#">Quality Products</a></h3>
+                                    <p>We provide the Best Quality in town</p>
+
+
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <hr/>
 
-<div class="col-md-4">
-    <div class="container" style="width:900px;">
-        <div class="row products">
-            <div class="col-md-4 col-sm-6">
-                <div class="panel-default panel panel-body">
-                    <div class="product">
-                        <div class="flip-container">
-                            <div class="flipper">
-                                <div class="front">
-                                    <a href="#">
-                                        <p></p>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="text">
-                            <h3><a href="#">Customer Satisfaction</a></h3>
-                            <p>Our customers are our first priority</p>
-
-
-                        </div>
-                        <!-- /.text -->
-                    </div>
-                    <!-- /.product -->
-                </div>
-            </div>
+    <div class="col-md-12">
+        <div class="col-sm-offset-5">
+            <h3>Our Products</h3>
         </div>
     </div>
-</div>
-
-<div class="col-md-4">
-    <div class="container" style="width:900px;">
+    <hr />
+    
+    <div class="col-md-12">
         <div class="row products">
-            <div class="col-md-4 col-sm-6">
-                <div class="panel-default panel panel-body">
-                    <div class="product">
-                        <div class="flip-container">
-                            <div class="flipper">
-                                <div class="front">
-                                    <a href="#">
-                                        <p></p>
-                                    </a>
+            @foreach (var item in Model)
+            {
+                if (item.productThumbnailPath != null)
+                {
+                    //  var bas = Convert.ToBase64String(item.productThumbnail);
+                    //  var imagesrc = string.Format("data:image/gif;base64,{0}", bas);
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="@Url.Action("ProductDetails","Product",item)">
+                                                <img src="@Url.Content(item.productThumbnailPath)" alt="" class="img-responsive" style="width:450px;height:300px;">
+                                            </a>
+                                        </div>
+
+                                    </div>
                                 </div>
-
+                                <div class="text">
+                                    <h3><a href="@Url.Action("ProductDetails","Product",item)">@item.productName</a></h3>
+                                    <h4 class="price">Rs @item.productPrice</h4>
+                                </div>
+                                <!-- /.text -->
                             </div>
+                            <!-- /.product -->
                         </div>
-                        <div class="text">
-                            <h3><a href="#">Value for your time</a></h3>
-                            <p>We try our best to reach you as soon as you want</p>
-
-
-                        </div>
-                        <!-- /.text -->
                     </div>
-                    <!-- /.product -->
-                </div>
-            </div>
+                }
+                else
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel-default panel panel-body">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="@Url.Action("ProductDetails","Product",item)">
+                                                <img src="~/Content/img/noImage.jpg" alt="" class="img-responsive" style="width:450px;height:300px;">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="@Url.Action("ProductDetails","Product",item)">@item.productName</a></h3>
+                                    <h4 class="price">Rs @item.productPrice</h4>
+                                    <p class="buttons">
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                    </div>
+                }
+            }
         </div>
     </div>
+
 </div>
-
-
-<h2></h2>
 

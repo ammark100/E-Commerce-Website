@@ -17,7 +17,8 @@ namespace _11March2017Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            List<tblProduct> products = db.tblProducts.Where(pic => pic.productThumbnailPath != null).OrderByDescending(x => x.productID).Take(3).ToList();
+            return View(products);
         }
 
         public ActionResult Index1()
